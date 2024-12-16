@@ -71,3 +71,5 @@ group :test do
   gem "webdrivers"
 
 end
+
+gem "rspec-rails", "~> 7.1"

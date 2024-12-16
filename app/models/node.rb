@@ -42,6 +42,10 @@ class Node < ApplicationRecord
   
       # Log the state transition / Log de la transición de estado
       logs.create(message: "Node #{id} reached consensus on state #{new_state}")
+      
+      neighbors.each do |neighbor|
+        neighbor.logs.create(message: "Node #{id} reached consensus on state #{new_state}")
+      end
     else
       # If consensus is not reached, a failure can be logged / Si no se alcanza consenso, se puede registrar un fallo
       logs.create(message: "Node #{id} failed to reach consensus on state #{new_state}")
