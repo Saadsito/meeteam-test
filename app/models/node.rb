@@ -6,11 +6,11 @@ class Node < ApplicationRecord
   def initialize(id)
     super()  # Call the base class initializer (ApplicationRecord) / Llamamos al inicializador de la clase base (ApplicationRecord)
     self.id = id  # Manually assign the id / Asignamos el id manualmente
+    save! unless persisted? # Save the node if it is not already saved / Guardamos el nodo si no está guardado
   end
 
   # Method to add a neighbor to a node / Método para agregar un vecino a un nodo
   def add_neighbor(neighbor)
-    save! unless persisted?  # Save the node if it is not already saved / Guardamos el nodo si no está guardado
     node_neighbors.create(neighbor: neighbor) unless neighbors.include?(neighbor)  # Create a node neighbor unless it already exists / Creamos un vecino del nodo a menos que ya exista
   end
 
