@@ -93,10 +93,10 @@ puts node1.retrieve_log
 puts node2.retrieve_log
 puts node3.retrieve_log
 
----
 
 ### 6. Run the Tests
-If the project includes tests, you can run them with:
+---
+
 bundle exec rspec
 
 ---
@@ -233,7 +233,6 @@ puts node3.retrieve_log
 ---
 
 ### 6. Ejecutar las pruebas
-Si el proyecto incluye pruebas, puedes ejecutarlas con:
 
 ```
 bundle exec rspec
